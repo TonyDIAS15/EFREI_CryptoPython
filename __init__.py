@@ -20,24 +20,14 @@ def encryptage(valeur):
     token = f.encrypt(valeur_bytes)  # Encrypt la valeur
     return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
 
-@app.route('/decrypt/', methods=['POST'])
-def decrypt():
+@app.route('/decrypt/<string:token>')
+def decryptage(token):
     try:
-        # Récupérer les données chiffrées depuis la requête
-        encrypted_data = request.json.get('encrypted_data')
-        if not encrypted_data:
-            return jsonify({'error': 'Données chiffrées manquantes'}), 400
-
-        # Déchiffrer les données
-        decrypted_data = cipher_suite.decrypt(encrypted_data.encode()).decode()
-
-        # Retourner les données déchiffrées
-        return jsonify({'decrypted_data': decrypted_data}), 200
+        token_bytes = token.encode()  # Conversion str -> bytes
+        valeur = f.decrypt(token_bytes)  # Décrypte le token
+        return f"Valeur décryptée : {valeur.decode()}"  # Retourne la valeur en str
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-if __name__ == '__main__':
-    app.run(debug=True)
-                                                                                                                                                     
+        return f"Erreur de décryptage : {str(e)}"
+                                                                                                                  
 if __name__ == "__main__":
   app.run(debug=True)
