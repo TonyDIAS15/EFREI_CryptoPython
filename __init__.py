@@ -7,8 +7,8 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)                                                                                                                  
                                                                                                                                        
-@app.route('/')
-def hello_world():
+@app.route('/') #a
+def hello_world(): 
     return render_template('hello.html')
 
 key = Fernet.generate_key()
