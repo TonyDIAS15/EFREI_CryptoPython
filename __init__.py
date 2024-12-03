@@ -11,7 +11,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template('hello.html')
 
-key = Fernet.generate_key() #a
+key = Fernet.generate_key()
 f = Fernet(key)
 
 @app.route('/encrypt/<string:valeur>')
