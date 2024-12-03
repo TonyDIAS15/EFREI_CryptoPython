@@ -12,6 +12,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd $HOME/www/
+
   Copy:
     needs: Connexion
     runs-on: ubuntu-latest
@@ -34,6 +35,7 @@ jobs:
               echo "Le répertoire flask de destination sur votre serveur n'existe pas"
               exit 1
             fi
+
   Restart:
     needs: Copy
     runs-on: ubuntu-latest
@@ -45,12 +47,24 @@ jobs:
           if [ "$response_code" -eq 204 ]; then
             echo "Relance de votre site réussi"
           elif [ "$response_code" -eq 404 ]; then
-            echo "Vous n'avez pas renseigner correctement votre secret ALWAYSDATA_SITE_ID"
+            echo "Vous n'avez pas renseigné correctement votre secret ALWAYSDATA_SITE_ID"
             exit 1  # Quitter avec un code d'erreur
           elif [ "$response_code" -eq 401 ]; then
-            echo "Vous n'avez pas renseigner correctement votre secret ALWAYSDATA_TOKEN"
-          exit 1  # Quitter avec un code d'erreur
+            echo "Vous n'avez pas renseigné correctement votre secret ALWAYSDATA_TOKEN"
+            exit 1  # Quitter avec un code d'erreur
           else
             echo "Échec du redémarrage avec le code de réponse : $response_code"
             exit 1  # Quitter avec un code d'erreur
-          fi
+
+  FinalConnexion:
+    needs: Restart
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connexion SSH avec le serveur
+        uses: appleboy/ssh-action@master
+        with:
+          host: "ssh-${{ secrets.USERNAME }}.alwaysdata.net"
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd $HOME/www/
