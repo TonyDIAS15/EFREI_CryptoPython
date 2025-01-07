@@ -10,8 +10,6 @@ app = Flask(__name__)
 @app.route('/') #a
 def hello_world(): 
     return render_template('hello.html')
-def ex1():
-    return render_template('ex1.html')
 
 key = Fernet.generate_key()
 f = Fernet(key)
@@ -33,3 +31,8 @@ def decryptage(token):
                                                                                                                   
 if __name__ == "__main__":
   app.run(debug=True)
+
+
+@app.route('/ex1') #a
+def ex1(): 
+    return render_template('ex1.html')
