@@ -41,10 +41,10 @@ def ex2():
     return render_template('ex2.html')
 @app.route('/ex3') #a
 def ex3(): 
-    return render_template('ex3.html')
+    return render_template('Ex3.html')
 @app.route('/ex4') #a
 def ex4(): 
-    return render_template('ex4.html')
+    return render_template('Ex4.html')
 @app.route('/ex5') #a
 def ex5(): 
     return render_template('ex5.html')
