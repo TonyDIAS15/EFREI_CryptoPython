@@ -48,3 +48,9 @@ def ex4():
 @app.route('/ex5') #a
 def ex5(): 
     return render_template('ex5.html')
+@app.route('/sommaire') #a
+def sommaire(): 
+    return render_template('sommaire.html')
+@app.route('/accueil') #a
+def accueil(): 
+    return render_template('accueil.html')
