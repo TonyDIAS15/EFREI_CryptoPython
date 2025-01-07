@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple de Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        .nested-table td {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="3">un tableau</td>
+        </tr>
+        <tr>
+            <td>à 6</td>
+            <td></td>
+            <td>cases</td>
+        </tr>
+    </table>
+
+    <h2>Voici la deuxième partie</h2>
+    <p><span style="color: red;">Une liste</span></p>
+    <ol>
+        <li>premier point
+            <ul>
+                <li>rubrique 1</li>
+                <li>rubrique 2</li>
+            </ul>
+        </li>
+        <li>2e point</li>
+        <li>3e point
+            <ul>
+                <li>rubrique 1</li>
+                <li>rubrique 2</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Voici la troisième partie :</h2>
+    <table class="nested-table">
+        <tr>
+            <td colspan="2">un autre tableau</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="height: 50px;"></td>
+            <td style="height: 50px;"></td>
+            <td style="height: 50px;"></td>
+        </tr>
+        <tr>
+            <td style="height: 50px;"></td>
+            <td colspan="2" style="height: 50px;"></td>
+        </tr>
+    </table>
+</body>
+</html>
