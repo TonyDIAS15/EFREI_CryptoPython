@@ -36,3 +36,15 @@ if __name__ == "__main__":
 @app.route('/ex1') #a
 def ex1(): 
     return render_template('ex1.html')
+@app.route('/ex2') #a
+def ex2(): 
+    return render_template('ex2.html')
+@app.route('/ex3') #a
+def ex3(): 
+    return render_template('ex3.html')
+@app.route('/ex4') #a
+def ex4(): 
+    return render_template('ex4.html')
+@app.route('/ex5') #a
+def ex5(): 
+    return render_template('ex5.html')
