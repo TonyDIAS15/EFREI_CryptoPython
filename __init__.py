@@ -54,3 +54,6 @@ def sommaire():
 @app.route('/accueil') #a
 def accueil(): 
     return render_template('accueil.html')
+@app.route('/svg') #a
+def svg(): 
+    return render_template('svg.html')
