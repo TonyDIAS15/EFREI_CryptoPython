@@ -63,3 +63,6 @@ def maison_svg():
 @app.route('/jack') #a
 def jack(): 
     return render_template('jack.html')
+@app.route('/chenille') #a
+def chenille(): 
+    return render_template('chenille.html')
