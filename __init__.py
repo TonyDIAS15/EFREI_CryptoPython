@@ -57,3 +57,6 @@ def accueil():
 @app.route('/svg') #a
 def svg(): 
     return render_template('svg.html')
+@app.route('/maison_svg') #a
+def maison_svg(): 
+    return render_template('maison_svg.html')
