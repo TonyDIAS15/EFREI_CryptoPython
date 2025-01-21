@@ -69,3 +69,6 @@ def chenille():
 @app.route('/des') #a
 def des(): 
     return render_template('Des_6.html')
+@app.route('/img') #a
+def img(): 
+    return render_template('static/afficher_img.html')
