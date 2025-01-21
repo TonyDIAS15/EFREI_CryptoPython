@@ -2,7 +2,7 @@
 <head>
 <script>
 function affichage(){
-	alert("Tout es OK !");
+	alert("Tout est OK !");
 }
 function cacher(){
 	document.getElementById('DuTexte').style.display="None";
@@ -13,32 +13,30 @@ function presenter(){
 
 function controler(){
 	if(document.getElementById('Control').checked){
-			alert("Bouton option coché");
-		}
-	else{alert("Bouton option NON coché");}
+		alert("Bouton option coché");
+	} else {
+		alert("Bouton option NON coché");
+	}
 
+	// Affichage de chaque image en fonction des cases cochées
 	if(document.getElementById('img1').checked){
-
 		document.getElementById('image1').style.display = "block";
-	}else{
+	} else {
 		document.getElementById('image1').style.display = "none";
 	}
 
 	if(document.getElementById('img2').checked){
-
 		document.getElementById('image2').style.display = "block";
-	}else{
+	} else {
 		document.getElementById('image2').style.display = "none";
 	}
 
 	if(document.getElementById('img3').checked){
-
 		document.getElementById('image3').style.display = "block";
-	}else{
+	} else {
 		document.getElementById('image3').style.display = "none";
 	}
 }
-
 </script>
 </head>
 <body>
@@ -64,6 +62,7 @@ function controler(){
 
 <button onclick="controler()" id="img_show">Afficher</button>
 
+<!-- Correction du chemin d'accès des images -->
 <img id="image1" src="{{ url_for('static', filename='images/img1.jpg') }}" style="display:none;" alt="Image 1">
 <img id="image2" src="{{ url_for('static', filename='images/img2.jpg') }}" style="display:none;" alt="Image 2">
 <img id="image3" src="{{ url_for('static', filename='images/img3.jpg') }}" style="display:none;" alt="Image 3">
