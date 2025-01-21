@@ -5,8 +5,9 @@ from flask import json
 from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
-app = Flask(__name__)                                                                                                                  
-                                                                                                                                       
+#app = Flask(__name__)                                                                                                                  
+app = Flask(__name__, static_folder='static')
+
 @app.route('/') #a
 def hello_world(): 
     return render_template('hello.html')
