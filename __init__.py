@@ -66,3 +66,6 @@ def jack():
 @app.route('/chenille') #a
 def chenille(): 
     return render_template('chenille.html')
+@app.route('/des') #a
+def des(): 
+    return render_template('Des_6.html')
