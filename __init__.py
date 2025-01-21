@@ -72,4 +72,4 @@ def des():
     return render_template('Des_6.html')
 @app.route('/img') #a
 def img(): 
-    return render_template('static/afficher_img.html')
+    return send_from_directory('static', 'afficher_img.html')
