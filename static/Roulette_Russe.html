@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Roulette Russe</title>
+<script>
+let balle = Math.floor(Math.random() * 6) + 1;
+
+function lancer() {
+    const chambre = Math.floor(Math.random() * 6) + 1;
+    if (chambre === balle) {
+        const audio = new Audio('sound/gun.mp3');
+        audio.play();
+        setTimeout(() => {
+            alert("BOUM ! Vous avez perdu...");
+        }, 500);
+    } else {
+        alert("Clic ! Vous avez survécu...");
+    }
+}
+</script>
+</head>
+<body>
+<h1>Roulette Russe</h1>
+
+<svg width="200" height="200" style="background-color:antiquewhite">
+    <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+    <circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+    <circle cx="100" cx="100" r="10" stroke="black" stroke-width="3" fill="black" />
+</svg>
+
+<button onclick="lancer()">Jouer</button>
+
+<audio id="gunshot-sound" src="gun.mp3"></audio>
+
+</body>
+</html>
