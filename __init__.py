@@ -74,3 +74,6 @@ def des():
 @app.route('/img') #a
 def img(): 
     return send_from_directory('static', 'afficher_img.html')
+@app.route('/RR_vide') #a
+def RR_vide(): 
+    return send_from_directory('static', 'Roulette_Russe_Etape_1_Barillet_Vide.html')
