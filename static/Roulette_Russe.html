@@ -9,7 +9,7 @@ let balle = Math.floor(Math.random() * 6) + 1;
 function lancer() {
     const chambre = Math.floor(Math.random() * 6) + 1;
     if (chambre === balle) {
-        const audio = new Audio('sound/gun.mp3');
+        const audio = new Audio('/static/sound/gun.mp3');
         audio.play();
         setTimeout(() => {
             alert("BOUM ! Vous avez perdu...");
@@ -36,7 +36,7 @@ function lancer() {
 
 <button onclick="lancer()">Jouer</button>
 
-<audio id="gunshot-sound" src="gun.mp3"></audio>
+<audio id="gunshot-sound" src="/static/sound/gun.mp3"></audio>
 
 </body>
 </html>
