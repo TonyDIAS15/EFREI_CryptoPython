@@ -21,6 +21,8 @@ function lancer() {
 
 function afficherChambre(numero) {
     alert(`Vous avez cliqué sur la chambre numéro ${numero}`);
+    const chambre = document.getElementById(`Br${numero}`);
+    chambre.setAttribute("fill", "red");
 }
 </script>
 </head>
