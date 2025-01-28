@@ -80,3 +80,6 @@ def RR_vide():
 @app.route('/RR') #a
 def RR(): 
     return send_from_directory('static', 'Roulette_Russe.html')
+@app.route('/RRprojet') #a
+def RRprojet(): 
+    return send_from_directory('static', 'projet_roulette.html')
